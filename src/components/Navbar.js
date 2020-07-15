@@ -47,8 +47,11 @@ const Navbar = class extends React.Component {
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+              role="button"
               data-target="navMenu"
               onClick={() => this.toggleHamburger()}
+              onKeyDown={() => this.toggleHamburger()}
+              tabIndex={0}
             >
               <span />
               <span />
@@ -74,6 +77,9 @@ const Navbar = class extends React.Component {
               </Link>
               <Link className="navbar-item" to="/contact/examples">
                 Form Examples
+              </Link>
+              <Link className="navbar-item" to="/portfolio">
+                Portfolio
               </Link>
             </div>
             <div className="navbar-end has-text-centered">

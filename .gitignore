@@ -7,3 +7,6 @@ public/
 static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
+# Env config
+.env.development
+.env.production

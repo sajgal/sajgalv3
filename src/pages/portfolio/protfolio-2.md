@@ -1,4 +1,5 @@
 ---
+templateKey: portfolio-post
 title: Protfolio 2
 date: 2020-07-07T10:36:09.906Z
 photos:

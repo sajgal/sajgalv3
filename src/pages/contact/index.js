@@ -49,11 +49,11 @@ export default class Index extends React.Component {
                 onSubmit={this.handleSubmit}
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
-                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="form-name" value="contact" aria-label="Form name" />
                 <div hidden>
                   <label>
                     Don’t fill this out:{' '}
-                    <input name="bot-field" onChange={this.handleChange} />
+                    <input name="bot-field" onChange={this.handleChange} aria-label="do not fill" />
                   </label>
                 </div>
                 <div className="field">
@@ -68,6 +68,7 @@ export default class Index extends React.Component {
                       onChange={this.handleChange}
                       id={'name'}
                       required={true}
+                      aria-label="Name"
                     />
                   </div>
                 </div>
@@ -83,6 +84,7 @@ export default class Index extends React.Component {
                       onChange={this.handleChange}
                       id={'email'}
                       required={true}
+                      aria-label="Email"
                     />
                   </div>
                 </div>
@@ -97,6 +99,7 @@ export default class Index extends React.Component {
                       onChange={this.handleChange}
                       id={'message'}
                       required={true}
+                      aria-label="Message"
                     />
                   </div>
                 </div>
