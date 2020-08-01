@@ -46,6 +46,24 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
+      - file: "src/pages/landing.md"
+        label: "New Landing Page"
+        name: "landing"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "home-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Description, name: description, widget: markdown }
+          - {
+              label: Images,
+              name: images,
+              widget: list,
+              fields: [{ label: Image, name: image, widget: image }],
+            }
       - file: "src/pages/index.md"
         label: "Landing Page"
         name: "index"
