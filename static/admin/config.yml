@@ -54,10 +54,10 @@ collections:
               label: "Template Key",
               name: "templateKey",
               widget: "hidden",
-              default: "home-page",
+              default: "landing-page",
             }
           - { label: Title, name: title, widget: string }
-          - { label: Description, name: description, widget: markdown }
+          - { label: Body, name: body, widget: markdown }
           - {
               label: Images,
               name: images,

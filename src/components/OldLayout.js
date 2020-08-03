@@ -1,39 +1,15 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { withPrefix } from 'gatsby';
-import styled, { createGlobalStyle } from 'styled-components';
-
-import Footer from './Footer';
-import Navbar from '../components/Navbar';
-import useSiteMetadata from './SiteMetadata';
-
-const GlobalStyle = createGlobalStyle`
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-`
-const PageWrapper = styled.div`
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  border: 1px solid hotpink;
-  min-height: 100vh;
-  width: 100vw;
-`;
-
-const MainContent = styled.div`
-  background: turquoise;
-`;
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import './all.sass'
+import useSiteMetadata from './SiteMetadata'
+import { withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
   return (
-    <PageWrapper>
+    <div>
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -72,12 +48,10 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <GlobalStyle />
-
       <Navbar />
-      <MainContent>{children}</MainContent>
+      <div>{children}</div>
       <Footer />
-    </PageWrapper>
+    </div>
   )
 }
 
