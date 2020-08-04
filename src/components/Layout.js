@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
 const PageWrapper = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
-  border: 1px solid hotpink;
   min-height: 100vh;
   width: 100vw;
 `;
