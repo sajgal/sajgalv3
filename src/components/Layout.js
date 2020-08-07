@@ -2,20 +2,38 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { withPrefix } from 'gatsby';
 import styled, { createGlobalStyle } from 'styled-components';
+import 'typeface-roboto-condensed';
+import 'typeface-roboto-slab';
 
 import Footer from './Footer';
 import Navbar from '../components/Navbar';
 import useSiteMetadata from './SiteMetadata';
+import backgroundPattern from '../img/bg-pattern.png';
 
 const GlobalStyle = createGlobalStyle`
   html,
   body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #1d3557;
+    text-shadow: 1px 1px 0 #edf2f4;
   }
 
   * {
     box-sizing: border-box;
+  }
+
+  a {
+    padding: 2px 3px;
+    color: #1d3557;
+  }
+
+  a:hover {
+    background: #1d3557;
+    text-shadow: none;
+    color: #edf2f4;
+
   }
 `
 const PageWrapper = styled.div`
@@ -26,7 +44,20 @@ const PageWrapper = styled.div`
 `;
 
 const MainContent = styled.div`
-  background: turquoise;
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.1;
+    z-index: -1;
+    background: url(${backgroundPattern}) #edf2f4;
+    background-repeat: repeat;
+    background-size: 274px 233px;
+    content: "";
+  }
+
 `;
 
 const TemplateWrapper = ({ children }) => {
