@@ -17,7 +17,7 @@ const ContentGrid = styled.div`
   grid-template-areas:
     "image title"
     "image description";
-  grid-template-columns: 450px auto;
+  grid-template-columns: 550px auto;
   margin: auto 0;
   max-width: 960px;
   justify-content: center;

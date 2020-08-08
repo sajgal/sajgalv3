@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import LandingTemplate from '../components/LandingTemplate'
 
 const IndexPage = ({ data }) => {
-  const { html, frontmatter } = data.markdownRemark
+  const { html, frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -40,7 +40,7 @@ export const pageQuery = graphql`
         image {
           relativePath
           childImageSharp {
-            fluid(maxWidth: 450, quality: 100) { #, duotone: { highlight: "#f00e2e", shadow: "#192550" }
+            fluid(maxWidth: 550, quality: 100) { #, duotone: { highlight: "#f00e2e", shadow: "#192550" }
               ...GatsbyImageSharpFluid
             }
           }

@@ -22,18 +22,18 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
-        <StyledLink className="navbar-item" to="/landing">
+        <StyledLink className="navbar-item" to="/">
           Home
         </StyledLink>
-        <StyledLink className="navbar-item" to="/portfolio">
+        {/* <StyledLink className="navbar-item" to="/cv">
           Curiculum Vitae
         </StyledLink>
-        <StyledLink className="navbar-item" to="/portfolio">
+        <StyledLink className="navbar-item" to="/photos">
           Photos
         </StyledLink>
-        <StyledLink className="navbar-item" to="/portfolio">
+        <StyledLink className="navbar-item" to="/projects">
           Pet Projects
-        </StyledLink>
+        </StyledLink> */}
       </Navigation>
     )
   }
