@@ -79,17 +79,16 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string" }
       - {
-          label: "Publish Date",
-          name: "date",
-          dateFormat: "DD.MM.YYYY",
-          timeFormat: "HH:mm",
-          widget: "datetime",
+          label: "Menu #",
+          name: "menu_order",
+          widget: "number",
+          default: 0,
+          valueType: "int",
+          min: 0,
         }
-      - label: "Photos"
-        name: "photos"
-        widget: "file"
-        allow_multiple: true
-        media_library:
-          name: "cloudinary"
-          config:
-            multiple: true
+      - {
+          label: Images,
+          name: images,
+          widget: list,
+          fields: [{ label: Image, name: image, widget: image }],
+        }

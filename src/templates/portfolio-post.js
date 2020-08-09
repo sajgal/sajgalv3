@@ -17,7 +17,7 @@ const PortfolioPost = ({ data }) => {
       <PortfolioPostTemplate
         title={post.frontmatter.title}
         date={post.frontmatter.date}
-        photos={post.frontmatter.photos}
+        photos={post.frontmatter.images}
       />
     </Layout>
   )
@@ -37,9 +37,17 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MM.DD.YYYY")
         title
-        photos
+        images {
+          image {
+            relativePath
+            childImageSharp {
+              fluid(maxWidth: 550, quality: 100) { #, duotone: { highlight: "#f00e2e", shadow: "#192550" }
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
   }
