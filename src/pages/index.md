@@ -35,4 +35,7 @@ images:
   - image: /img/32.jpg
   - image: /img/33.jpg
 ---
-If you're looking for my photos, [they are here.](http://www.theyarehere.com)
+I'm mostly web developer.\
+Somethimes photogragher.\
+Definitely a cyclist.\
+Don't forget to water your hoseplants.
