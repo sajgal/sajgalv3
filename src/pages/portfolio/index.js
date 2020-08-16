@@ -1,38 +1,47 @@
 import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import get from 'lodash/get';
+import { navigate } from '@reach/router';
+import styled from 'styled-components';
 
 import Layout from '../../components/Layout'
-import PortfolioRoll from '../../components/PortfolioRoll';
+import PortfolioSidebar from '../../components/PortfolioSidebar';
 
-export default class PortfolioIndexPage extends React.Component {
-  render() {
-    return (
-      <Layout>
-        <div
-          className="full-width-image-container margin-top-0"
-          style={{
-            backgroundImage: `url('/img/blog-index.jpg')`,
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-1"
-            style={{
-              boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
-              backgroundColor: '#f40',
-              color: 'white',
-              padding: '1rem',
-            }}
-          >
-            Latest portfolio posts
-          </h1>
-        </div>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <PortfolioRoll />
-            </div>
-          </div>
-        </section>
-      </Layout>
-    )
+const Content = styled.section`
+  place-items: center;
+  display: grid;
+  height: 100%;
+  font-size: 2em;
+`;
+
+const PortfolioIndexPage = () => {
+  const menuItems = useStaticQuery(graphql`
+    {
+      allMarkdownRemark(limit: 1, sort: {order: ASC, fields: [frontmatter___menu_order]}, filter: {frontmatter: {templateKey: {eq: "portfolio-post"}, menu_order: {gt: 0}}}) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  const firstMenuItemSlug = get(menuItems, 'allMarkdownRemark.edges.0.node.fields.slug');
+
+  if(firstMenuItemSlug) {
+    navigate(firstMenuItemSlug);
   }
+
+  return (
+    <Layout>
+      <Content>
+        <PortfolioSidebar />
+      </Content>
+    </Layout>
+  )
 }
+
+export default PortfolioIndexPage;

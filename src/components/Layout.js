@@ -40,7 +40,6 @@ const PageWrapper = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  width: 100vw;
 `;
 
 const MainContent = styled.div`

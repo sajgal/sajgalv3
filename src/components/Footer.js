@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 `;
 
 const AlmostTransparent = styled.div`
-  opacity: 0.5;
+  color: rgba(29, 53, 87, 0.5);
 `;
 
 const TRUTHS = [

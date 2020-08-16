@@ -1,24 +1,34 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import { PortfolioPostTemplate } from '../components/PortfolioPostTemplate';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
+import Layout from '../components/Layout';
+import PortfolioSidebar from '../components/PortfolioSidebar';
+import PortfolioGallery from '../components/PortfolioGallery';
+
+const Wrapper = styled.section`
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  align-items: center;
+  height: 100%;
+  width: calc(100vw - (100vw - 100%));
+`;
 
 const PortfolioPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { markdownRemark: post } = data;
 
   return (
     <Layout>
       <Helmet titleTemplate="%s | Portfolio">
         <title>{`${post.frontmatter.title}`}</title>
       </Helmet>
-      <PortfolioPostTemplate
-        title={post.frontmatter.title}
-        date={post.frontmatter.date}
-        photos={post.frontmatter.images}
-      />
+
+      <Wrapper>
+        <PortfolioSidebar activeItemId={post.id} />
+        <PortfolioGallery post={post} />
+      </Wrapper>
     </Layout>
   )
 }
@@ -35,15 +45,14 @@ export const pageQuery = graphql`
   query PortfolioPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
-      html
       frontmatter {
         title
         images {
           image {
             relativePath
             childImageSharp {
-              fluid(maxWidth: 550, quality: 100) { #, duotone: { highlight: "#f00e2e", shadow: "#192550" }
-                ...GatsbyImageSharpFluid
+              fluid(maxWidth: 550, quality: 100) {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }

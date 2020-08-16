@@ -1,6 +1,6 @@
 import React from 'react';
 
-const URL_IMG_CLOUDINARY = 'https://res.cloudinary.com/dqjl6uv1s/image/upload/t_sajgal-thumb/';
+// const URL_IMG_CLOUDINARY = 'https://res.cloudinary.com/dqjl6uv1s/image/upload/t_sajgal-thumb/';
 
 const Images = ({photos}) => {
   // const getPhotoUrl = (photo) => {

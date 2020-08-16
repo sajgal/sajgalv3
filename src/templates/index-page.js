@@ -41,7 +41,7 @@ export const pageQuery = graphql`
           relativePath
           childImageSharp {
             fluid(maxWidth: 550, quality: 100) { #, duotone: { highlight: "#f00e2e", shadow: "#192550" }
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

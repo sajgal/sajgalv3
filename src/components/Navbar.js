@@ -27,11 +27,11 @@ const Navbar = class extends React.Component {
         </StyledLink>
         {/* <StyledLink className="navbar-item" to="/cv">
           Curiculum Vitae
-        </StyledLink>
-        <StyledLink className="navbar-item" to="/photos">
+        </StyledLink> */}
+        <StyledLink className="navbar-item" to="/portfolio">
           Photos
         </StyledLink>
-        <StyledLink className="navbar-item" to="/projects">
+        {/* <StyledLink className="navbar-item" to="/projects">
           Pet Projects
         </StyledLink> */}
       </Navigation>
