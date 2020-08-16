@@ -36,7 +36,7 @@ images:
   - image: /img/33.jpg
 ---
 I'm mostly web developer.\
-Somethimes photogragher.\
+Sometimes photogragher.\
 Definitely a cyclist.\
 \
 Don't forget to water your hoseplants.
