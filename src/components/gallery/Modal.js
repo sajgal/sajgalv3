@@ -39,9 +39,14 @@ const BigButton = styled.button`
   height: 100%;
   font-size: 2em;
 
-  &:active, &:focus {
+  &:hover, &:focus {
     outline: none;
-    box-shadow: 0 0 3px rgba(29, 53, 87, 0.5);
+    text-shadow: 0 0 3px violet;
+  }
+
+  &:active {
+    outline: none;
+    text-shadow: 0 0 3px red;
   }
 `;
 

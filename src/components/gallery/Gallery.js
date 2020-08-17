@@ -18,6 +18,7 @@ const Imagrid = styled.section`
 const ImageWrapper = styled.button`
   border: 0;
   background: none;
+  cursor: pointer;
   padding: 0;
   width: 100%;
 `;
