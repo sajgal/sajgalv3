@@ -33,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
     background: #1d3557;
     text-shadow: none;
     color: #edf2f4;
-
   }
 `
 const PageWrapper = styled.div`

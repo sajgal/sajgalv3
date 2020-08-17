@@ -6,6 +6,8 @@ import PropTypes from 'prop-types';
 import Modal from './Modal';
 
 const KEY_ESC = 27;
+const KEY_LEFT_ARROW = 37;
+const KEY_RIGHT_ARROW = 39;
 
 const Imagrid = styled.section`
   display: grid;
@@ -22,22 +24,30 @@ const ImageWrapper = styled.button`
 
 const Gallery = ({images}) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeImage, setActiveImage] = useState(null);
+  const [activeImageIndex, setActiveImageIndex] = useState(null);
   const onModalKeyDown = (event) => {
     if(event.keyCode === KEY_ESC) {
       setIsVisible(false);
     }
+
+    if(event.keyCode === KEY_LEFT_ARROW) {
+      setActiveImageFromRange(activeImageIndex-1);
+    }
+
+    if(event.keyCode === KEY_RIGHT_ARROW) {
+      setActiveImageFromRange(activeImageIndex+1);
+    }
   }
 
-  const onImageClick = (imageObject) => {
-    setActiveImage(imageObject);
+  const onImageClick = (imageIndex) => {
+    setActiveImageIndex(imageIndex);
     setIsVisible(!isVisible);
   }
 
   const thumbnails = images.map(({image: {alt = '', childImageSharp}}, index) => {
     return childImageSharp && <ImageWrapper
       key={index}
-      onClick={() => onImageClick({alt, childImageSharp})}
+      onClick={() => onImageClick(index)}
     >
         <Img
           fluid={childImageSharp.fluid}
@@ -46,12 +56,26 @@ const Gallery = ({images}) => {
       </ImageWrapper>;
   })
 
+  const setActiveImageFromRange = (index) => {
+    const max = images.length;
+    const imageIndex = (index%max + max)%max;
+
+    setActiveImageIndex(imageIndex);
+  }
+
   return (
     <React.Fragment>
       <Imagrid>
         {!!thumbnails && thumbnails}
       </Imagrid>
-      <Modal isVisible={isVisible} activeImage={activeImage} onKeyDown={onModalKeyDown} />
+      <Modal
+        isVisible={isVisible}
+        activeImage={images[activeImageIndex]}
+        onKeyDown={onModalKeyDown}
+        onCloseButtonClick={() => setIsVisible(false)}
+        setActiveImage={setActiveImageFromRange}
+        activeImageIndex={activeImageIndex}
+      />
     </React.Fragment>
   );
 };
@@ -59,8 +83,9 @@ const Gallery = ({images}) => {
 Gallery.propTypes = {
   images: PropTypes.arrayOf(
     PropTypes.shape({
-      relativePath: PropTypes.string,
+      alt: PropTypes.string,
       childImageSharp: PropTypes.object,
+      relativePath: PropTypes.string,
     })
   ),
 }
