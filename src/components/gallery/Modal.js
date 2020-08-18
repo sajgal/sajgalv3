@@ -6,7 +6,6 @@ import invoke from 'lodash/invoke';
 
 const Wrapper = styled.div`
   backdrop-filter: blur(10px);
-  gap: 10px;
   display: grid;
   position: fixed;
   top: 0;
