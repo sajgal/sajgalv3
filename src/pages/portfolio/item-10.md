@@ -1,7 +1,7 @@
 ---
 templateKey: portfolio-post
 title: Item 10
-menu_order: 10
+menu_order: 1
 images:
   - image: /img/2.jpg
   - image: /img/1.jpg
