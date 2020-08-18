@@ -35,10 +35,13 @@ const GlobalStyle = createGlobalStyle`
     color: #edf2f4;
   }
 `
+
 const PageWrapper = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: ${typeof window !== `undefined` ? window.innerHeight : 500}px;
+  min-height: 100vh;
+  /* min-height: ${typeof window !== `undefined` ? window.innerHeight : 500}px; */
+  /* min-height: -webkit-fill-available; */
 `;
 
 const MainContent = styled.div`
