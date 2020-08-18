@@ -1,9 +1,10 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
-import { withPrefix } from 'gatsby';
-import styled, { createGlobalStyle } from 'styled-components';
 import 'typeface-roboto-condensed';
 import 'typeface-roboto-slab';
+import { Helmet } from 'react-helmet';
+import { withPrefix } from 'gatsby';
+import get from 'lodash/get';
+import styled, { createGlobalStyle } from 'styled-components';
 
 import Footer from './Footer';
 import Navbar from '../components/Navbar';
@@ -38,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
 const PageWrapper = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: ${window.innerHeight}px;
+  min-height: ${get(window, 'innerHeight', 500)}px;
 `;
 
 const MainContent = styled.div`
