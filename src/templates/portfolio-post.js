@@ -10,10 +10,19 @@ import PortfolioGallery from '../components/PortfolioGallery';
 
 const Wrapper = styled.section`
   display: grid;
-  grid-template-columns: 300px 1fr;
-  align-items: center;
   height: 100%;
-  width: calc(100vw - (100vw - 100%));
+  max-width: 1024px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 200px 1fr;
+    padding-right: 10px;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 300px 1fr;
+    padding: 0;
+  }
 `;
 
 const PortfolioPost = ({ data }) => {
@@ -51,7 +60,7 @@ export const pageQuery = graphql`
           image {
             relativePath
             childImageSharp {
-              fluid(maxWidth: 550, quality: 100) {
+              fluid(maxWidth: 1500, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

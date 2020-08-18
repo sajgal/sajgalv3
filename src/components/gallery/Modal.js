@@ -6,25 +6,35 @@ import invoke from 'lodash/invoke';
 
 const Wrapper = styled.div`
   backdrop-filter: blur(10px);
+  gap: 10px;
   display: grid;
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  gap: 10px;
   grid-template-areas:
-    "prev image next";
-  grid-template-columns: auto 60vw auto;
+    "image image"
+    "prev next";
   visibility: ${({isVisible}) => isVisible ? 'visible' : 'hidden'};
   outline: 0;
   background-color: rgba(255, 255, 255, 0.85);
+
+  @media (min-width: 768px) {
+    grid-template-areas:
+      "prev image next";
+    grid-template-columns: auto 80% auto;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: auto 60% auto;
+  }
 `;
 
 const ImageWrapper = styled(Img)`
   grid-area: image;
   align-self: center;
-  height: 90vh;
+  height: 95vh;
 `;
 
 const PrevWrapper = styled.div`
@@ -58,16 +68,17 @@ const Close = styled.button`
   position: absolute;
   top: 0;
   right: 0;
+  z-index: 1;
+  border: none;
+  background: none;
   cursor: pointer;
   padding: 5px 15px;
   font-size: 2em;
-  background: none;
-  border: none;
 
   &:active, &:focus, &:hover {
     outline: none;
-    color: #edf2f4;
     background: #1d3557;
+    color: #edf2f4;
   }
 `;
 
@@ -101,7 +112,7 @@ const Modal = ({
       {childImageSharp && <ImageWrapper
         fluid={childImageSharp.fluid}
         alt={alt}
-        imgStyle={{width: "60vw", objectFit: "contain"}}
+        imgStyle={{width: "100%", objectFit: "contain"}}
       />}
       <NextWrapper>
         <BigButton onClick={(event) => stopPropagationAndSetActive(event, activeImageIndex+1)}>&raquo;</BigButton>

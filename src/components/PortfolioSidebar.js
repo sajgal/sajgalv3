@@ -24,25 +24,17 @@ const PortfolioSidebar = ({ activeItemId }) => {
   const posts = menuItems.allMarkdownRemark.edges;
 
   return (
-    <div className="columns is-multiline">
-      {posts &&
-        posts.map(({ node: post }) => (
-          <div className="is-parent column is-6" key={post.id}>
-            <article className={'blog-list-item tile is-child box notification'} >
-              <header>
-                <p className="post-meta">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                    activeStyle={{ color: "red" }}
-                  >
-                    {post.frontmatter.title}
-                  </Link>
-                </p>
-              </header>
-            </article>
-          </div>
-        ))}
+    <div>
+      {posts && posts.map(({ node: post }) => (
+        <div key={post.id}>
+          <Link
+            to={post.fields.slug}
+            activeStyle={{ color: "red" }}
+          >
+            {post.frontmatter.title}
+          </Link>
+        </div>
+      ))}
     </div>
   )
 };

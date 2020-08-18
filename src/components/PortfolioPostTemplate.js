@@ -10,8 +10,8 @@ export const PortfolioPostTemplate = ({
   title,
 }) => {
   return (
-    <section className="section">
-      <div className="container content">
+    <section>
+      <div>
        {!!title && <h1>{title}</h1>}
        <div><small>{moment(date).format('DD.MM.YYYY')}</small></div>
        <Images photos={photos} />

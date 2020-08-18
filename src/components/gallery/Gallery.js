@@ -11,8 +11,9 @@ const KEY_RIGHT_ARROW = 39;
 
 const Imagrid = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-gap: 10px;
+  grid-auto-rows: 250px;
 `;
 
 const ImageWrapper = styled.button`
@@ -20,7 +21,6 @@ const ImageWrapper = styled.button`
   background: none;
   cursor: pointer;
   padding: 0;
-  width: 100%;
 `;
 
 const Gallery = ({images}) => {
@@ -53,6 +53,7 @@ const Gallery = ({images}) => {
         <Img
           fluid={childImageSharp.fluid}
           alt={alt}
+          style={{height: '100%'}}
         />
       </ImageWrapper>;
   })
