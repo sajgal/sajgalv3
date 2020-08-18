@@ -14,14 +14,17 @@ const Wrapper = styled.div`
   bottom: 0;
   left: 0;
   grid-template-areas:
+    ". close"
     "image image"
     "prev next";
+  grid-template-rows: auto 1fr auto;
   visibility: ${({isVisible}) => isVisible ? 'visible' : 'hidden'};
   outline: 0;
   background-color: rgba(255, 255, 255, 0.85);
 
   @media (min-width: 768px) {
     grid-template-areas:
+      ". . close"
       "prev image next";
     grid-template-columns: auto 80% auto;
   }
@@ -34,7 +37,7 @@ const Wrapper = styled.div`
 const ImageWrapper = styled(Img)`
   grid-area: image;
   align-self: center;
-  height: 95vh;
+  height: 95%;
 `;
 
 const PrevWrapper = styled.div`
@@ -65,15 +68,14 @@ const NextWrapper = styled.div`
 `;
 
 const Close = styled.button`
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1;
+  grid-area: close;
   border: none;
   background: none;
   cursor: pointer;
   padding: 5px 15px;
   font-size: 2em;
+  justify-self: right;
+  width: 50px;
 
   &:active, &:focus, &:hover {
     outline: none;

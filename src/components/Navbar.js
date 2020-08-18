@@ -3,10 +3,11 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const Navigation = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  display: grid;
+  gap: 15px;
   margin: 4px 10px;
+  grid-auto-flow: column;
+  justify-content: left;
 `;
 
 const StyledLink = styled(Link)`
