@@ -3,7 +3,6 @@ import 'typeface-roboto-condensed';
 import 'typeface-roboto-slab';
 import { Helmet } from 'react-helmet';
 import { withPrefix } from 'gatsby';
-import get from 'lodash/get';
 import styled, { createGlobalStyle } from 'styled-components';
 
 import Footer from './Footer';
@@ -39,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 const PageWrapper = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
-  min-height: ${get(window, 'innerHeight', 500)}px;
+  min-height: ${typeof window !== `undefined` ? window.innerHeight : 500}px;
 `;
 
 const MainContent = styled.div`
