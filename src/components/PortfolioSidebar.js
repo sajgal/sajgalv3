@@ -2,6 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import { graphql, useStaticQuery } from 'gatsby'
+import styled from 'styled-components';
+
+const Wrapper = styled.nav`
+  margin-top: 50px;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  padding-right: 20px;
+  gap: 15px;
+`;
+
+const PortfolioLink = styled(Link)`
+  background: #f5f5f5;
+  text-decoration: none;
+  padding: 5px 10px;
+
+  &.active {
+    border-right: 4px solid #884C87;
+  }
+`;
 
 const PortfolioSidebar = ({ activeItemId }) => {
   const menuItems = useStaticQuery(graphql`
@@ -24,18 +44,17 @@ const PortfolioSidebar = ({ activeItemId }) => {
   const posts = menuItems.allMarkdownRemark.edges;
 
   return (
-    <div>
+    <Wrapper>
       {posts && posts.map(({ node: post }) => (
-        <div key={post.id}>
-          <Link
-            to={post.fields.slug}
-            activeStyle={{ color: "red" }}
-          >
-            {post.frontmatter.title}
-          </Link>
-        </div>
+        <PortfolioLink
+          key={post.id}
+          to={post.fields.slug}
+          activeClassName="active"
+        >
+          {post.frontmatter.title}
+        </PortfolioLink>
       ))}
-    </div>
+    </Wrapper>
   )
 };
 

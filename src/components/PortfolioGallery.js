@@ -4,7 +4,8 @@ import styled from 'styled-components';
 import Gallery from './gallery/Gallery';
 
 const Title = styled.h1`
-  text-align: center;
+  margin: 0;
+  line-height: 50px;
 `;
 
 const PortfolioGallery = ({post}) => {
