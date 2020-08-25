@@ -1,5 +1,5 @@
 ---
 templateKey: portfolio-post
-title: Portraits
+title: Crossfit
 menu_order: 1
 ---

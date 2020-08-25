@@ -1,5 +1,5 @@
 ---
 templateKey: portfolio-post
-title: Portraits
+title: Product photo
 menu_order: 1
 ---

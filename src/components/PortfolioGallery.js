@@ -6,6 +6,11 @@ import Gallery from './gallery/Gallery';
 const Title = styled.h1`
   margin: 0;
   line-height: 50px;
+  padding-left: 10px;
+
+  @media (min-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const PortfolioGallery = ({post}) => {

@@ -11,9 +11,29 @@ const KEY_RIGHT_ARROW = 39;
 
 const Imagrid = styled.section`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-columns: minmax(90px, 1fr);
   grid-gap: 10px;
-  grid-auto-rows: 250px;
+  grid-auto-rows: 200px;
+
+  @media (min-width: 320px) {
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+    grid-auto-rows: 130px;
+  }
+
+  @media (min-width: 425px) {
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
+    grid-auto-rows: 190px;
+  }
+
+  @media (min-width: 650px) {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    grid-auto-rows: 220px;
+  }
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(150px, 1fr));
+    grid-auto-rows: 250px;
+  }
 `;
 
 const ImageWrapper = styled.button`
@@ -45,7 +65,7 @@ const Gallery = ({images}) => {
     setIsVisible(!isVisible);
   }
 
-  const thumbnails = images.map(({image: {alt = '', childImageSharp}}, index) => {
+  const thumbnails = !!images && images.map(({image: {alt = '', childImageSharp}}, index) => {
     return childImageSharp && <ImageWrapper
       key={index}
       onClick={() => onImageClick(index)}
@@ -68,11 +88,11 @@ const Gallery = ({images}) => {
   return (
     <React.Fragment>
       <Imagrid>
-        {!!thumbnails && thumbnails}
+        {!!thumbnails ? thumbnails : "Sorry, there are no images here yet."}
       </Imagrid>
       <Modal
         isVisible={isVisible}
-        activeImage={images[activeImageIndex]}
+        activeImage={!!images && images[activeImageIndex]}
         onKeyDown={onModalKeyDown}
         onCloseButtonClick={() => setIsVisible(false)}
         setActiveImage={setActiveImageFromRange}

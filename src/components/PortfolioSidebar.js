@@ -7,10 +7,17 @@ import styled from 'styled-components';
 const Wrapper = styled.nav`
   margin-top: 50px;
   display: flex;
-  flex-flow: column;
-  align-items: flex-end;
-  padding-right: 20px;
+  align-items: flex-start;
   gap: 15px;
+  margin-left: 10px;
+  flex-wrap: wrap;
+
+  @media (min-width: 768px) {
+    flex-flow: column;
+    align-items: flex-end;
+    padding-right: 20px;
+    padding-right: 20px;
+  }
 `;
 
 const PortfolioLink = styled(Link)`
@@ -23,7 +30,7 @@ const PortfolioLink = styled(Link)`
   }
 `;
 
-const PortfolioSidebar = ({ activeItemId }) => {
+const PortfolioSidebar = () => {
   const menuItems = useStaticQuery(graphql`
     {
       allMarkdownRemark(sort: {order: ASC, fields: [frontmatter___menu_order]}, filter: {frontmatter: {templateKey: {eq: "portfolio-post"}, menu_order: {gt: 0}}}) {

@@ -35,7 +35,7 @@ const PortfolioPost = ({ data }) => {
       </Helmet>
 
       <Wrapper>
-        <PortfolioSidebar activeItemId={post.id} />
+        <PortfolioSidebar />
         <PortfolioGallery post={post} />
       </Wrapper>
     </Layout>
@@ -60,7 +60,7 @@ export const pageQuery = graphql`
           image {
             relativePath
             childImageSharp {
-              fluid(maxWidth: 1500, quality: 100) {
+              fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

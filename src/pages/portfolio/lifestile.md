@@ -1,5 +1,5 @@
 ---
 templateKey: portfolio-post
-title: Portraits
+title: Lifestyle
 menu_order: 1
 ---
