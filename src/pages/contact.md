@@ -1,4 +1,5 @@
 ---
+title: Contact
 image: /img/img_20200708_162742.jpg
 ---
 Hey!
