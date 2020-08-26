@@ -61,6 +61,19 @@ collections:
               widget: list,
               fields: [{ label: Image, name: image, widget: image }],
             }
+      - file: "src/pages/contact.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "contact-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Body, name: body, widget: markdown }
+          - { label: Image, name: image, widget: image }
 
   - name: "portfolio"
     label: "Portfolio"

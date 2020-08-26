@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 
   @media (min-width: 768px) {
     grid-template-areas:
-      ". . close"
+      "prev image close"
       "prev image next";
     grid-template-columns: auto 80% auto;
   }

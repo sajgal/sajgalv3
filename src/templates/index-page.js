@@ -37,15 +37,14 @@ export const pageQuery = graphql`
       frontmatter {
         title
         images {
-        image {
-          relativePath
-          childImageSharp {
-            fluid(maxWidth: 550, quality: 100) { #, duotone: { highlight: "#f00e2e", shadow: "#192550" }
-              ...GatsbyImageSharpFluid_withWebp
+          image {
+            childImageSharp {
+              fluid(maxWidth: 550, quality: 100) { #, duotone: { highlight: "#f00e2e", shadow: "#192550" }
+                ...GatsbyImageSharpFluid_withWebp
+              }
             }
           }
         }
-      }
       }
     }
   }

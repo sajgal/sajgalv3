@@ -26,15 +26,15 @@ const Navbar = class extends React.Component {
         <StyledLink className="navbar-item" to="/">
           Home
         </StyledLink>
-        {/* <StyledLink className="navbar-item" to="/cv">
-          Curiculum Vitae
-        </StyledLink> */}
         <StyledLink className="navbar-item" to="/portfolio">
           Photos
         </StyledLink>
         {/* <StyledLink className="navbar-item" to="/projects">
           Pet Projects
         </StyledLink> */}
+        <StyledLink className="navbar-item" to="/contact">
+          Contact
+        </StyledLink>
       </Navigation>
     )
   }

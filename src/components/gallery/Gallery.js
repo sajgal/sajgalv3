@@ -92,7 +92,7 @@ const Gallery = ({images}) => {
       </Imagrid>
       <Modal
         isVisible={isVisible}
-        activeImage={!!images && images[activeImageIndex]}
+        activeImage={!!images ? images[activeImageIndex] : {}}
         onKeyDown={onModalKeyDown}
         onCloseButtonClick={() => setIsVisible(false)}
         setActiveImage={setActiveImageFromRange}
