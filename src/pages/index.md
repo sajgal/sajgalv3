@@ -23,6 +23,7 @@ images:
   - image: /img/29.jpg
   - image: /img/30.jpg
   - image: /img/31.jpg
+  - image: /img/dscf8868.jpg
 ---
 I'm mostly web developer.\
 Sometimes photogragher.\
