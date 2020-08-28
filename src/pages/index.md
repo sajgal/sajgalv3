@@ -16,21 +16,15 @@ images:
   - image: /img/15.jpg
   - image: /img/16.jpg
   - image: /img/18.jpg
-  - image: /img/19.jpg
   - image: /img/20.jpg
   - image: /img/21.jpg
-  - image: /img/22.jpg
   - image: /img/23.jpg
   - image: /img/24.jpg
-  - image: /img/25.jpg
-  - image: /img/26.jpg
-  - image: /img/27.jpg
   - image: /img/28.jpg
   - image: /img/29.jpg
   - image: /img/30.jpg
   - image: /img/31.jpg
   - image: /img/32.jpg
-  - image: /img/33.jpg
 ---
 I'm mostly web developer.\
 Sometimes photogragher.\
