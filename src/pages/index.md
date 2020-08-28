@@ -4,7 +4,6 @@ title: Matej Sajgal
 images:
   - image: /img/1.jpg
   - image: /img/2.jpg
-  - image: /img/3.jpg
   - image: /img/4.jpg
   - image: /img/5.jpg
   - image: /img/7.jpg
@@ -24,7 +23,6 @@ images:
   - image: /img/29.jpg
   - image: /img/30.jpg
   - image: /img/31.jpg
-  - image: /img/32.jpg
 ---
 I'm mostly web developer.\
 Sometimes photogragher.\
