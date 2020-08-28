@@ -17,7 +17,6 @@ images:
   - image: /img/18.jpg
   - image: /img/20.jpg
   - image: /img/21.jpg
-  - image: /img/23.jpg
   - image: /img/24.jpg
   - image: /img/28.jpg
   - image: /img/29.jpg
