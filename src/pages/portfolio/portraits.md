@@ -17,4 +17,5 @@ images:
   - image: /img/vn8.jpg
   - image: /img/vn9.jpg
   - image: /img/vn10.jpg
+  - image: /img/dscf7712.jpg
 ---
