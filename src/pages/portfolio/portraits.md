@@ -8,8 +8,6 @@ images:
   - image: /img/dscf1989.jpg
   - image: /img/dscf2082.jpg
   - image: /img/vn1.jpg
-  - image: /img/vn2.jpg
-  - image: /img/vn3.jpg
   - image: /img/vn4.jpg
   - image: /img/vn5.jpg
   - image: /img/vn6.jpg
