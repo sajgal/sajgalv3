@@ -18,4 +18,6 @@ images:
   - image: /img/vn9.jpg
   - image: /img/vn10.jpg
   - image: /img/dscf7712.jpg
+  - image: /img/dscf9934.jpg
+  - image: /img/dscf9743.jpg
 ---
