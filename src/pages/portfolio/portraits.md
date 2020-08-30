@@ -3,19 +3,20 @@ templateKey: portfolio-post
 title: Portraits
 menu_order: 1
 images:
-  - image: /img/dscf1844.jpg
-  - image: /img/dscf1871.jpg
-  - image: /img/dscf1989.jpg
-  - image: /img/dscf2082.jpg
-  - image: /img/vn1.jpg
-  - image: /img/vn4.jpg
-  - image: /img/vn5.jpg
-  - image: /img/vn6.jpg
-  - image: /img/vn7.jpg
-  - image: /img/vn8.jpg
-  - image: /img/vn9.jpg
-  - image: /img/vn10.jpg
-  - image: /img/dscf7712.jpg
-  - image: /img/dscf9934.jpg
-  - image: /img/dscf9743.jpg
+  - image: /img/port-1.jpg
+  - image: /img/port-2.jpg
+  - image: /img/port-3.jpg
+  - image: /img/port-4.jpg
+  - image: /img/port-5.jpg
+  - image: /img/port-6.jpg
+  - image: /img/port-7.jpg
+  - image: /img/port-8.jpg
+  - image: /img/port-9.jpg
+  - image: /img/port-10.jpg
+  - image: /img/port-11.jpg
+  - image: /img/port-12.jpg
+  - image: /img/port-13.jpg
+  - image: /img/port-14.jpg
+  - image: /img/port-15.jpg
+  - image: /img/port-16.jpg
 ---

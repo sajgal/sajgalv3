@@ -21,7 +21,7 @@ images:
   - image: /img/29.jpg
   - image: /img/30.jpg
   - image: /img/31.jpg
-  - image: /img/dscf8868.jpg
+  - image: /img/cycl-1.jpg
 ---
 I'm mostly web developer.\
 Sometimes photogragher.\
