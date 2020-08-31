@@ -8,7 +8,6 @@ const Wrapper = styled.nav`
   margin-top: 50px;
   display: flex;
   align-items: flex-start;
-  gap: 15px;
   margin-left: 10px;
   flex-wrap: wrap;
 
@@ -24,6 +23,7 @@ const PortfolioLink = styled(Link)`
   background: #f5f5f5;
   text-decoration: none;
   padding: 5px 10px;
+  margin-bottom: 15px;
 
   &.active {
     border-right: 4px solid #884C87;
