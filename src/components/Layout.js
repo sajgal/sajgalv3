@@ -59,11 +59,11 @@ const MainContent = styled.div`
 
 `;
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
+const TemplateWrapper = ({ children, title = '·'}) => {
+  const { siteName, description } = useSiteMetadata()
   return (
     <PageWrapper>
-      <Helmet>
+      <Helmet titleTemplate={`%s | ${siteName}`}>
         <html lang="en" />
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -89,11 +89,12 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="mask-icon"
           href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-          color="#ff4400"
+          color="#1d3557"
         />
         <meta name="theme-color" content="#fff" />
 
-        <meta property="og:type" content="business.business" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={siteName} />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
         <meta

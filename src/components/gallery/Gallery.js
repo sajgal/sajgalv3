@@ -76,14 +76,14 @@ const Gallery = ({images}) => {
           style={{height: '100%'}}
         />
       </ImageWrapper>;
-  })
+  });
 
   const setActiveImageFromRange = (index) => {
     const max = images.length;
     const imageIndex = (index%max + max)%max;
 
     setActiveImageIndex(imageIndex);
-  }
+  };
 
   return (
     <React.Fragment>

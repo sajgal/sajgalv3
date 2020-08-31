@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Matej Sajgal',
+    siteName: 'sajgal.com',
     description:
       'Matej Sajgal - web developer, photographer. Available for hire.',
   },
