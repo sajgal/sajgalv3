@@ -10,7 +10,7 @@ const IndexPage = ({ data }) => {
   const { html, frontmatter: {title, image} } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout title="Contact">
       <LandingTemplate body={html} title={title} images={[{image}]} />
     </Layout>
   )

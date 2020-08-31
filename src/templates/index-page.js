@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => {
   const { html, frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Layout title="Matej">
       <LandingTemplate
         title={frontmatter.title}
         body={html}

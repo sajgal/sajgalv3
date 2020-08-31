@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
@@ -29,11 +28,7 @@ const PortfolioPost = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
-      <Helmet titleTemplate="%s | Portfolio">
-        <title>{`${post.frontmatter.title}`}</title>
-      </Helmet>
-
+    <Layout title={post.frontmatter.title}>
       <Wrapper>
         <PortfolioSidebar />
         <PortfolioGallery post={post} />
@@ -58,7 +53,6 @@ export const pageQuery = graphql`
         title
         images {
           image {
-            relativePath
             childImageSharp {
               fluid(maxWidth: 1000, quality: 100) {
                 ...GatsbyImageSharpFluid_withWebp
