@@ -9,6 +9,7 @@ import Layout from '../../components/Layout';
 const Content = styled.section`
   place-items: center;
   display: grid;
+  margin-top: 50px;
   height: 100%;
   font-size: 2em;
 `;
