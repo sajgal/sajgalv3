@@ -24,9 +24,14 @@ const PortfolioLink = styled(Link)`
   text-decoration: none;
   padding: 5px 10px;
   margin-bottom: 15px;
+  margin-right: 10px;
 
   &.active {
     border-right: 4px solid #884C87;
+  }
+
+  @media (min-width: 768px) {
+    margin-right: 0;
   }
 `;
 

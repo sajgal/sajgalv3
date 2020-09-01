@@ -20,6 +20,7 @@ const Wrapper = styled.div`
   visibility: ${({isVisible}) => isVisible ? 'visible' : 'hidden'};
   outline: 0;
   background-color: rgba(255, 255, 255, 0.85);
+  height: 100%;
 
   @media (min-width: 768px) {
     grid-template-areas:
