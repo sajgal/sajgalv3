@@ -19,24 +19,9 @@ const Imagrid = styled.section`
   grid-auto-rows: 150px;
   width: 100%;
 
-  @media (min-width: 320px) {
-    /* grid-template-columns: repeat(3, minmax(90px, 1fr));
-    grid-auto-rows: 130px; */
-  }
-
-  @media (min-width: 425px) {
-    /* grid-template-columns: repeat(3, minmax(120px, 1fr));
-    grid-auto-rows: 190px; */
-  }
-
   @media (min-width: 650px) {
     grid-auto-rows: 200px;
     width: 640px;
-  }
-
-  @media (min-width: 768px) {
-    /* grid-template-columns: repeat(3, minmax(150px, 1fr));
-    grid-auto-rows: 250px; */
   }
 `;
 
@@ -45,7 +30,6 @@ const ImageWrapper = styled(Link)`
   background: none;
   cursor: pointer;
   padding: 0;
-  /* height: 200px; */
   font-family: 'Roboto Slab',serif;
   display: grid;
   border: 10px solid #f5f5f5;
@@ -115,7 +99,6 @@ const PortfolioIndexPage = () => {
         <Img
           fluid={childImageSharp.fluid}
           alt={alt}
-          style={{height: '100%'}}
         />
       </ImageWrapper>;
   });
