@@ -1,7 +1,16 @@
 import React from 'react';
 import sample from 'lodash/sample';
 import Img from 'gatsby-image';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const IN_FRONT_OF_TEXT = 1;
+
+const slideIn = keyframes`
+  from {
+    transform: translateX(-120%);
+
+  }
+`;
 
 const Container = styled.div`
   margin-top: 50px;
@@ -46,6 +55,7 @@ const ImageWrapper = styled.div`
   grid-area: image;
   height: 400px;
   display: grid;
+  z-index: ${IN_FRONT_OF_TEXT};
 
   @media (min-width: 650px) {
     border: 10px solid #f5f5f5;
@@ -60,6 +70,7 @@ const Title = styled.h1`
   margin: 0;
   padding: 10px;
   font-size: 3em;
+  animation: ${slideIn} 1s;
 
   @media (min-width: 650px) {
     padding: 0;
@@ -72,6 +83,7 @@ const Decription = styled.div`
   background: #f5f5f5;
   padding: 2px 5px;
   margin: 0 10px;
+  animation: ${slideIn} 1s;
 
   p {
     margin: 0;
