@@ -96,9 +96,10 @@ collections:
           valueType: "int",
           min: 0,
         }
+      - { label: "Cloudinary folder name", name: "cloudinary_folder", widget: "string" }
       - {
-          label: Images,
-          name: images,
+          label: Photos,
+          name: photos,
           widget: list,
-          fields: [{ label: Image, name: image, widget: image }],
+          fields: [{ label: Photo, name: photo, widget: file }],
         }

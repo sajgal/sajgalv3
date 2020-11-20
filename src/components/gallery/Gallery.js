@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Img from 'gatsby-image';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -43,6 +42,10 @@ const ImageWrapper = styled.button`
   padding: 0;
 `;
 
+const Img = styled.img`
+  width: 100%;
+`;
+
 const Gallery = ({images}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeImageIndex, setActiveImageIndex] = useState(null);
@@ -65,15 +68,13 @@ const Gallery = ({images}) => {
     setIsVisible(!isVisible);
   }
 
-  const thumbnails = !!images && images.map(({image: {alt = '', childImageSharp}}, index) => {
-    return childImageSharp && <ImageWrapper
+  const thumbnails = !!images && images.map((photoUrls, index) => {
+    return <ImageWrapper
       key={index}
       onClick={() => onImageClick(index)}
     >
         <Img
-          fluid={childImageSharp.fluid}
-          alt={alt}
-          style={{height: '100%'}}
+          src={photoUrls.thumb}
         />
       </ImageWrapper>;
   });
@@ -104,11 +105,7 @@ const Gallery = ({images}) => {
 
 Gallery.propTypes = {
   images: PropTypes.arrayOf(
-    PropTypes.shape({
-      alt: PropTypes.string,
-      childImageSharp: PropTypes.object,
-      relativePath: PropTypes.string,
-    })
+    PropTypes.object
   ),
 }
 

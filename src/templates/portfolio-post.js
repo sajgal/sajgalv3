@@ -51,14 +51,9 @@ export const pageQuery = graphql`
       id
       frontmatter {
         title
-        images {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
-            }
-          }
+        cloudinary_folder
+        photos {
+          photo
         }
       }
     }

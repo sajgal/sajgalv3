@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Gallery from './gallery/Gallery';
 
+const CLOUDINARY_CDN = 'https://res.cloudinary.com/';
+
 const Title = styled.h1`
   margin: 0;
   line-height: 50px;
@@ -14,12 +16,20 @@ const Title = styled.h1`
 `;
 
 const PortfolioGallery = ({post}) => {
-  const {frontmatter: {images, title}} = post;
+  const {frontmatter: {photos, title, cloudinary_folder}} = post;
+
+  const photoUrls = photos.map(({photo}) => {
+    const fileName = photo.replace(/\/img/g, '');
+    return {
+      thumb: `${CLOUDINARY_CDN}${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/t_sajgal-thumb/${cloudinary_folder}/${fileName}`,
+      full: `${CLOUDINARY_CDN}${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/t_sajgal-full/${cloudinary_folder}/${fileName}`,
+    };
+  });
 
   return (
     <div>
       {!!title && <Title>{title}</Title>}
-      <Gallery images={images} />
+      <Gallery images={photoUrls} />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React, {useEffect, createRef} from 'react';
-import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import invoke from 'lodash/invoke';
@@ -34,10 +33,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const ImageWrapper = styled(Img)`
+const ImageWrapper = styled.img`
   grid-area: image;
   align-self: center;
   height: 95%;
+  width: 100%;
+  object-fit: contain;
 `;
 
 const PrevWrapper = styled.div`
@@ -93,7 +94,6 @@ const Modal = ({
   setActiveImage,
 }) => {
   const modalRef = createRef();
-  const {alt = '', childImageSharp} = activeImage?.image || {};
   const stopPropagationAndSetActive = (event, imageIndex) => {
     event.stopPropagation();
     setActiveImage(imageIndex);
@@ -111,10 +111,9 @@ const Modal = ({
       <PrevWrapper>
         <BigButton onClick={(event) => stopPropagationAndSetActive(event, activeImageIndex-1)}>&laquo;</BigButton>
       </PrevWrapper>
-      {childImageSharp && <ImageWrapper
-        fluid={childImageSharp.fluid}
-        alt={alt}
-        imgStyle={{width: "100%", objectFit: "contain"}}
+      {activeImage && <ImageWrapper
+        src={activeImage.full}
+        alt={`Image ${activeImageIndex+1}`}
       />}
       <NextWrapper>
         <BigButton onClick={(event) => stopPropagationAndSetActive(event, activeImageIndex+1)}>&raquo;</BigButton>
