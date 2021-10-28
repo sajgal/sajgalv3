@@ -27,4 +27,4 @@ I'm mostly web developer.\
 Sometimes photogragher.\
 Definitely a cyclist.\
 \
-Don't forget to water your hoseplants.
+Don't forget to water your houseplants.
